@@ -107,6 +107,7 @@ const unifiedServer = function(req, res) {
 // Define a handlers
 const handlers = {};
 
+// Defining a handler for hello 
 handlers.hello = function(data, callback) {
     // callback a HTTP status code, and payload object
     callback(200, {message: 'Hello World, Node Js is Powerfull and its Eating the world'});
