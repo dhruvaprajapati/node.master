@@ -107,7 +107,7 @@ const unifiedServer = function(req, res) {
 // Define a handlers
 const handlers = {};
 
-handlers.helloWorld = function(data, callback) {
+handlers.hello = function(data, callback) {
     // callback a HTTP status code, and payload object
     callback(200, {message: 'Hello World, Node Js is Powerfull and its Eating the world'});
 };
@@ -120,5 +120,5 @@ handlers.notFound = function(data, callback) {
 
 // Define a request router
 const router = {
-    helloWorld: handlers.helloWorld,
+    hello: handlers.hello,
 };
