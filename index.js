@@ -101,28 +101,15 @@ const unifiedServer = function(req, res) {
                 '\nRequest received with this payload:', buffer,
                 '\nReturning this response: ', statudCode, ' ', payloadString);
         });
-
-
-        // Log the request path
-        console.log('Request is received on path:' + trimmedPath +
-            '\nwith method: ' + method +
-            '\nwith these query string parameter:',  queryStringObject,
-            '\nRequest received with these headers:', headers,
-            '\nRequest received with this payload:', buffer);
     });
 };
 
 // Define a handlers
 const handlers = {};
 
-handlers.sample = function(data, callback) {
+handlers.helloWorld = function(data, callback) {
     // callback a HTTP status code, and payload object
-    callback(406, { name: 'Sample Handler'})
-};
-
-handlers.ping = function(data, callback) {
-    // callback a HTTP status code, and payload object
-    callback(200);
+    callback(200, {message: 'Hello World, Node Js is Powerfull and its Eating the world'});
 };
 
 
@@ -133,6 +120,5 @@ handlers.notFound = function(data, callback) {
 
 // Define a request router
 const router = {
-    sample: handlers.sample,
-    ping: handlers.ping,
+    helloWorld: handlers.helloWorld,
 };
